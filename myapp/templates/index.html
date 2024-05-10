@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Text Extractor</title>
+</head>
+<body>
+    <h2>Video Text Extractor</h2>
+    <p>This is a website that extracts text from videos, similar to optical character recognition (OCR) that fetches text from images. Upload a video file below and click "Extract Text" to create a text file with the extracted texts.</p>
+    <form action="{% url 'extract_text' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="file" name="videoFile" accept="video/*">
+        <br>
+        <button type="submit">Extract Text</button>
+    </form>
+</body>
+</html>
